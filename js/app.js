@@ -12,7 +12,7 @@ var score = 0;
 
 // This method creates a random location value that is needed 
 // for the y value of the enemy bug.
-var randomLoc = function() {
+function randomLoc() {
     var loc = Math.floor((Math.random() * 4)+2);
     var y = (tileHeight * (loc -2)) + halfTile;
     switch (loc) {
@@ -42,13 +42,13 @@ var Enemy = function() {
     this.x = 0;
     this.y = randomLoc();
     this.speed = Math.floor((Math.random() * 4)+1);
-}
+};
 
 Enemy.prototype.reset = function() {
     this.x = 0;
     this.y = randomLoc();
     var loc = Math.floor((Math.random() * 4)+2);
-}
+};
 
 // Update the enemy's position, required method for game
 // Parameter: dt, a time delta between ticks
@@ -59,12 +59,12 @@ Enemy.prototype.update = function(dt) {
     // You should multiply any movement by the dt parameter
     // which will ensure the game runs at the same speed for
     // all computers.
-}
+};
 
 // Draw the enemy on the screen, required method for game
 Enemy.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-}
+};
 
 // Now write your own player class
 // This class requires an update(), render() and
@@ -73,7 +73,7 @@ var Player = function(){
     this.sprite = 'images/char-boy.png';
     this.x = mid;
     this.y = upLimit - halfTile +1;
-}
+};
 
 // This method will update the player sprite on the website.  It also checks if 
 // the player is occupying the same space as a enemy bug and checks if the other 
@@ -96,11 +96,11 @@ Player.prototype.update = function(dt) {
         this.reset();
         score = 0;
     }
-}
+};
 
 Player.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-}
+};
 
 // This method will handle the input received from the keyboard.  It lets the 
 // player move in a loop through the sides while not letting the player move off 
@@ -134,7 +134,7 @@ Player.prototype.handleInput = function(e) {
             } 
             break;
     }
-}
+};
 
 //This method resets the game without initializing another player.
 Player.prototype.reset = function() {
@@ -142,7 +142,7 @@ Player.prototype.reset = function() {
     this.y = upLimit - halfTile +1;
     for (i =0; i< allEnemies.length; i++)
         allEnemies[i].reset();
-}
+};
 
 
 // Now instantiate your objects.
