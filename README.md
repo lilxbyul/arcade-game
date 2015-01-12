@@ -1,6 +1,6 @@
 frontend-nanodegree-arcade-game
 ===============================
 
-Students should use this rubric: https://www.udacity.com/course/viewer#!/c-ud015/l-3072058665/m-3072588797
+In this game, you need to help the little boy Bob across the street.  There are just too many bugs just crawling across this street that Bob needs to cross.  
 
-for self-checking their submission.
+Using the arrow keys, avoid the bugs and make it to the other patch of grass to win the game.  But be careful, the bugs  vary in speeds and some are just zooming past you.
